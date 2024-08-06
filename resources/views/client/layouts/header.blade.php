@@ -4,7 +4,7 @@
 
             <div class="col-sm-4 col-lg-3 text-center text-sm-start">
                 <div class="main-logo">
-                    <a href="{{ route('client.viewClient') }}">
+                    <a href="{{ route('client.viewProducts') }}">
                         <img src="{{ asset('images/logo-balo.png') }}" alt="logo" class="img-fluid">
                     </a>
                 </div>
@@ -16,8 +16,9 @@
 
             <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-5 d-none d-lg-block">
                 <div class="search-bar border rounded-2 px-3 border-dark-subtle">
-                    <form id="search-form" class="text-center d-flex align-items-center" action="" method="">
-                        <input type="text" class="form-control border-0 bg-transparent"
+                    <form id="search-form" class="text-center d-flex align-items-center"
+                        action="{{ route('client.searchProducts') }}" method="GET">
+                        <input type="text" name="query" class="form-control border-0 bg-transparent"
                             placeholder="Search for more than 10,000 products" />
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <path fill="currentColor"
@@ -31,12 +32,11 @@
                 class="col-sm-8 col-lg-4 d-flex justify-content-end gap-5 align-items-center mt-4 mt-sm-0 justify-content-center justify-content-sm-end">
 
                 <div class="support-box text-end d-none d-xl-block">
-                    <span class="fs-6 secondary-font text-muted">Name</span>
-                    <h5 class="mb-0"></h5>
-                </div>
-                <div class="support-box text-end d-none d-xl-block">
-                    <span class="fs-6 secondary-font text-muted">Email</span>
-                    <h5 class="mb-0"></h5>
+                    {{-- <span class="fs-6 secondary-font text-muted">Name</span> --}}
+                    {{-- <h5 class="mb-0"></h5> --}}
+                    @if (session('message'))
+                        <div class="alert alert-primary" role="alert">{{ session('message') }}</div>
+                    @endif
                 </div>
             </div>
         </div>

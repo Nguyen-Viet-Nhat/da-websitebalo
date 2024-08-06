@@ -6,12 +6,23 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Client\SearchProductController;
+use App\Http\Controllers\Client\FilterProductController;
+
 
 
 // ClientController
 Route::group(['prefix' => 'client', 'as' => 'client.'], function () {
 
     Route::get('/', [ClienController::class, 'viewClient'])->name('viewClient');
+
+    Route::get('/', [ClienController::class, 'viewProducts'])->name('viewProducts');
+
+    // SearchProductController
+    Route::get('search', [SearchProductController::class, 'searchProducts'])->name('searchProducts');
+
+    // FilterProductController
+    Route::get('filter', [FilterProductController::class, 'filterProducts'])->name('filterProducts');
 
     // AuthenticationController
     Route::get('login', [AuthenticationController::class, 'loginUsers'])->name('loginUsers');

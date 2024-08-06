@@ -27,6 +27,19 @@
                     value="{{ $products->price }}$" disabled>
             </div>
             <div class="mb-3">
+                <label for="categoryProduct">Danh mục</label>
+                <select name="categoryProduct" name="categoryProduct" id="categoryProduct" class="form-control" disabled>
+                    <option value="1" {{ old('category_id') == 1 ? 'selected' : '' }}>Balo du lịch</option>
+                    <option value="2" {{ old('category_id') == 2 ? 'selected' : '' }}>Balo học sinh</option>
+                    <option value="3" {{ old('category_id') == 3 ? 'selected' : '' }}>Balo xách</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="descriptionProduct">Mô tả</label>
+                <textarea id="descriptionProduct" name="descriptionProduct" rows="4" class="form-control" cols="50"
+                    placeholder="{{ $products->description }}" disabled></textarea>
+            </div>
+            <div class="mb-3">
                 <label for="imgProducts">Ảnh</label>
                 <img src="{{ asset($products->img) }}" alt="" class="img-product form-control">
             </div>

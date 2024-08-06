@@ -18,6 +18,20 @@
                 <input type="text" name="priceProduct" id="priceProduct" class="form-control">
             </div>
             <div class="mb-3">
+                <label for="categoryProduct">Danh mục</label>
+                <select name="categoryProduct" name="categoryProduct" id="categoryProduct" class="form-control">
+                    <option value=""></option>
+                    <option value="1" {{ old('category_id') == 1 ? 'selected' : '' }}>Balo du lịch</option>
+                    <option value="2" {{ old('category_id') == 2 ? 'selected' : '' }}>Balo học sinh</option>
+                    <option value="3" {{ old('category_id') == 3 ? 'selected' : '' }}>Balo xách</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="descriptionProduct">Mô tả</label>
+                <textarea id="descriptionProduct" name="descriptionProduct" rows="4" class="form-control" cols="50"
+                    placeholder="Enter your description here..."></textarea>
+            </div>
+            <div class="mb-3">
                 <label for="imgProduct">Ảnh</label>
                 <input type="file" name="imgProduct" id="imgProduct" class="form-control" accept="/image">
             </div>

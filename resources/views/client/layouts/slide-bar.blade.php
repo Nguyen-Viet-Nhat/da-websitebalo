@@ -47,17 +47,18 @@
              </div>
 
              <div class="offcanvas-body justify-content-between">
-                 <select class="filter-categories border-0 mb-0 me-5">
-                     <option>Shop by Category</option>
-                     <option>Clothes</option>
-                     <option>Food</option>
-                     <option>Food</option>
-                     <option>Toy</option>
-                 </select>
-
+                 <form action="{{ route('client.filterProducts') }}" method="GET">
+                     <select name="category" id="category" onchange="this.form.submit()"
+                         class="filter-categories border-0 mb-0 me-5">
+                         <option>Shop by Category</option>
+                         @foreach ($categories as $category)
+                             <option value="{{ $category->category_id }}">{{ $category->name }}</option>
+                         @endforeach
+                     </select>
+                 </form>
                  <ul class="navbar-nav menu-list list-unstyled d-flex gap-md-3 mb-0">
                      <li class="nav-item">
-                         <a href="{{ route('client.viewClient') }}" class="nav-link active">Home</a>
+                         <a href="{{ route('client.viewProducts') }}" class="nav-link active">Home</a>
                      </li>
                      <li class="nav-item dropdown">
                          <a class="nav-link dropdown-toggle" role="button" id="pages" data-bs-toggle="dropdown"

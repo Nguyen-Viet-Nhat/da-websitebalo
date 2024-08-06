@@ -25,6 +25,8 @@
                     <th scope="col">STT</th>
                     <th scope="col">Tên sản phẩm</th>
                     <th scope="col">Giá sản phẩm</th>
+                    <th scope="col">Danh mục</th>
+                    <th scope="col">Mô tả</th>
                     <th scope="col">Ảnh</th>
                     <th scope="col">Hành động</th>
                 </tr>
@@ -35,6 +37,16 @@
                         <td scope="row">{{ $key + 1 }}</td>
                         <td>{{ $value->name }}</td>
                         <td class="text-danger">{{ $value->price }}$</td>
+                        <td>
+                            @if ($value->category_id == 1)
+                                Balo du lịch
+                            @elseif ($value->category_id == 2)
+                                Balo học sinh
+                            @else
+                                Balo xách
+                            @endif
+                        </td>
+                        <td>{{ $value->description }}</td>
                         <td>
                             <img class="img-product" src="{{ asset($value->img) }}">
                         </td>

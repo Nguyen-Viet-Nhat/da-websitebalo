@@ -12,7 +12,7 @@ class AuthenticationController extends Controller
 {
     public function loginUsers()
     {
-        return view('login');
+        return view('client.account.login');
     }
 
     public function postLoginUsers(Request $req)
@@ -33,7 +33,7 @@ class AuthenticationController extends Controller
                     'message' => 'Đăng nhập thành công!'
                 ]);
             } else {
-                return redirect()->route('client.viewClient')->with([
+                return redirect()->route('client.viewProducts')->with([
                     'message' => 'Đăng nhập thành công User!'
                 ]);
             }
@@ -55,7 +55,7 @@ class AuthenticationController extends Controller
 
     public function registerUsers()
     {
-        return view('register');
+        return view('client.account.register');
     }
 
     public function postRegisterUsers(Request $req)

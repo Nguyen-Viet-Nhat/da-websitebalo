@@ -40,6 +40,8 @@ class ProductController extends Product
             'name' => $req->nameProduct,
             'price' => $req->priceProduct,
             'img' => $imgUrl,
+            'description' => $req->descriptionProduct,
+            'category_id' => $req->categoryProduct,
         ];
         Product::create($data);
 
@@ -96,6 +98,8 @@ class ProductController extends Product
             'name' => $req->nameProduct,
             'price' => $req->priceProduct,
             'img' => $imgUrl,
+            'description' => $req->descriptionProduct,
+            'category_id' => $req->categoryProduct,
         ];
         Product::where('product_id', $idProduct)->update($data);
         return redirect()->route('admin.products.listProducts')
