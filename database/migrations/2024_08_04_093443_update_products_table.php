@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->string('description', 500);
             $table->unsignedInteger('category_id');
             $table->foreign('category_id')->references('category_id')->on('category')->onDelete('cascade');
+
         });
     }
 

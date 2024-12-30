@@ -10,7 +10,6 @@ use App\Http\Controllers\Client\SearchProductController;
 use App\Http\Controllers\Client\FilterProductController;
 
 
-
 // ClientController
 Route::group(['prefix' => 'client', 'as' => 'client.'], function () {
 

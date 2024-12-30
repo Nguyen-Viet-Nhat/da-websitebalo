@@ -14,7 +14,7 @@ class CheckAdminMiddleware
     {
 
         if (Auth::check()) {
-            if (Auth::user()->role == 1) {
+            if (Auth::check() && Auth::user()->role === 1) {
                 return $next($request);
             } else {
                 return redirect()->route('client.viewClient');
